@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=0"/>
+  <meta name="author" content="">
+  <title>MOCKUP | Flip 'n Win</title>
+  <link rel="icon" href="img/favicon.png"/>
+  <link href="css/style.min.css" rel="stylesheet">
+  <meta name="robots" content="noindex"/>
+  <script src="js/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+  <div class="holder">
+    <div class="logo"></div>
+    <div id="step">Flip Card : <span></span></div>
+    <ul class="wrapper cards" id="card">
+      <!-- Populated by JS -->
+    </ul>
+    <template id="card-template">
+      <li class="container">
+        <div class="card">
+          <div class="front"></div>
+          <div class="back">
+            <div class="content">
+              <img src='img/image__value.svg'>
+            </div>
+          </div>
+        </div>
+      </li>
+    </template>
+  </div>
+
+  <div class="howtoplay">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px"
+    	 height="23.044px" viewBox="0 0 11.3 18.6" style="enable-background:new 0 0 14 23.044;" xml:space="preserve">
+    <style type="text/css">
+    	.st0{fill:#FFFFFF;}
+    </style>
+    <defs>
+    </defs>
+    <g>
+    	<path class="st0" d="M11.3,4.2c0,4.2-4.6,3.8-4.6,6.8v0.8H3.3v-0.9c0-4.4,4.2-4.1,4.2-6.3c0-1.1-0.7-1.6-2-1.6
+    		c-1.1,0-2.2,0.5-3.1,1.6L0,2.7C1.5,1,3.3,0,5.9,0C9.5,0,11.3,2,11.3,4.2z M7.2,16.4c0,1.2-1,2.2-2.2,2.2c-1.2,0-2.2-1-2.2-2.2
+    		c0-1.2,1-2.2,2.2-2.2C6.3,14.2,7.2,15.2,7.2,16.4z"/>
+    </g>
+    </svg>
+  </div>
+
+  <div class="winprize">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    width="24.48px"
+       height="21.58px" viewBox="0 0 24.48 21.58" style="enable-background:new 0 0 24.5 21.6;" xml:space="preserve">
+    <style type="text/css">
+    	.st0{fill:#FFFFFF;}
+    </style>
+    <path class="st0" d="M10.1,12.8c-0.7-0.7-1.4-1.3-2.1-2c-0.3,0.4-0.8,1.1-1.9,1c0-0.6-0.3-1.2,0.5-1.6C7,9.9,6.9,9.1,6.4,8.7
+    	C5.7,8.3,4.9,7.9,4.1,7.5C2.8,6.8,1.5,6.2,0.6,4.8C-0.5,3.1,0,1.2,1.7,0.3c1-0.5,2.2-0.2,3,0.7c0.2,0.2,0.3,0.4,0.6,0.7
+    	c0-0.2,0.1-0.3,0.1-0.4c0-1.1,0-1.1,1.1-1.1c3.9,0,7.8,0,11.8,0c0.3,0,0.5,0,0.8,0c0,0.5,0,1,0,1.5c0.5-0.5,0.9-0.9,1.4-1.3
+    	c1.6-1.2,3.7,0.4,3.9,1.8c0.3,1.8-0.6,3.1-2,4.1c-1.2,0.8-2.5,1.3-3.7,2c-0.8,0.4-1.1,0.9-1,1.5c0,0.1,0.1,0.3,0.2,0.4
+    	c0.7,0.4,0.5,1,0.4,1.6c-1,0.1-1.5-0.5-1.9-1c-0.7,0.7-1.4,1.3-2.1,2c0.3,0.4,0.3,0.6-0.4,0.8c-0.5,0.2-0.6,0.5-0.6,0.9
+    	c0.1,1.2,0.6,2.3,1.8,2.8c0.5,0.2,0.9,0.5,1.3,0.8c0.1,0.1,0.1,0.3,0.2,0.4c0.2,0.8,0.3,1.7,0.5,2.5c0.1,0.4-0.1,0.5-0.4,0.5
+    	c-3,0-6.1,0-9.1,0c-0.4,0-0.5-0.2-0.4-0.5c0.2-0.8,0.2-1.7,0.5-2.5c0.2-0.6,0.9-1,1.5-1.3c1-0.4,1.9-2.1,1.6-3.1
+    	c-0.1-0.2-0.3-0.4-0.5-0.5C9.7,13.4,9.7,13.3,10.1,12.8z M18.1,6.9c0.9-0.4,1.7-0.7,2.4-1.2c0.8-0.5,1.6-1.1,2.2-1.8
+    	c0.7-0.8,0.4-1.8-0.3-2.3c-0.6-0.4-1.3-0.2-1.7,0.6c-0.4,0.7-0.9,1-1.6,0.9c0,0,0,0,0,0C18.7,4.4,18.4,5.6,18.1,6.9z M6.4,7
+    	C6.1,5.6,5.8,4.4,5.5,3.1C4.6,3.4,4.1,3,3.8,2.2c0,0,0,0,0-0.1c-0.5-0.6-1-0.8-1.6-0.5C1.6,2,1.3,2.7,1.5,3.4C1.8,4.2,2.3,4.7,3,5.1
+    	C4,5.8,5.1,6.3,6.4,7z"/>
+    </svg>
+
+  </div>
+
+  <audio controls id="win" style="display:none;">
+    <source src="sound/win.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio controls id="flip" style="display:none;">
+    <source src="sound/card-flip.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio controls id="flip2" style="display:none;">
+    <source src="sound/card-flip.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio controls id="flip3" style="display:none;">
+    <source src="sound/card-flip.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="modal">
+    <div class="modal-overlay modal-toggle"></div>
+
+    <!--- modal how to play --->
+    <div class="modal-wrapper modal-transition" id="howtoplay">
+      <div class="modal-header">
+        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 17.4 17.4" style="enable-background:new 0 0 17.4 17.4;" xml:space="preserve">
+          <style type="text/css">
+          	.st0{fill:#FFFFFF;}
+          </style>
+          <polygon class="st0" points="17.4,0.4 17,0 8.7,8.3 0.4,0 0,0.4 8.3,8.7 0,17 0.4,17.4 8.7,9 17,17.4 17.4,17 9,8.7 "/>
+          </svg>
+        </button>
+        <h2 class="modal-heading">How To Play</h2>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-content">
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-step"><img src="img/step1.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <p>Sign in to your imaginary Account.</p>
+
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-step"><img src="img/step2.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <p>Flip and Win</p>
+
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-step"><img src="img/step3.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <p>Check your imaginary Account to redeem</p>
+
+          <button class="modal-toggle sign">Sign In</button>
+          <button class="modal-toggle register">Register</button>
+        </div>
+      </div>
+    </div>
+
+  <!--- modal prize --->
+    <div class="modal-wrapper modal-transition" id="winprize">
+      <div class="modal-header">
+        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 17.4 17.4" style="enable-background:new 0 0 17.4 17.4;" xml:space="preserve">
+          <style type="text/css">
+            .st0{fill:#FFFFFF;}
+          </style>
+          <polygon class="st0" points="17.4,0.4 17,0 8.7,8.3 0.4,0 0,0.4 8.3,8.7 0,17 0.4,17.4 8.7,9 17,17.4 17.4,17 9,8.7 "/>
+          </svg>
+        </button>
+        <h2 class="modal-heading">Flip & Win Prize</h2>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-content">
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-win"><img src="img/grand.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <p>Remergence of fireflies</p>
+
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-win2"><img src="img/2nd.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <p>Tribute to Dodo</p>
+
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-win3"><img src="img/3th.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <p>The common cheese cake</p>
+
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-win4"><img src="img/4th.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <p>An annoying goose</p>
+
+          <div class="inner-block"><img src="img/star.svg"></div>
+          <div class="inner-win5"><img src="img/special.svg"></div>
+          <div class="inner-block"><img src="img/star.svg"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--- modal congratulation --->
+    <div class="modal-wrapper modal-transition" id="congratulation">
+      <div class="modal-header">
+        <button type="button" class="modal-close" onclick="location.reload();">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 17.4 17.4" style="enable-background:new 0 0 17.4 17.4;" xml:space="preserve">
+          <style type="text/css">
+          	.st0{fill:#FFFFFF;}
+          </style>
+          <polygon class="st0" points="17.4,0.4 17,0 8.7,8.3 0.4,0 0,0.4 8.3,8.7 0,17 0.4,17.4 8.7,9 17,17.4 17.4,17 9,8.7 "/>
+          </svg>
+        </button>
+        <h2 class="modal-heading">Congratulations!</h2>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-content">
+          <p class="small">You've won one of the</p>
+          <p class="prize"><img src="img/prize.svg"></p>
+          <p class="small">Your gift has been added into your account</p>
+        </div>
+      </div>
+    </div>
+
+    <!--- modal failed --->
+    <div class="modal-wrapper modal-transition" id="failed">
+      <div class="modal-header">
+        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 17.4 17.4" style="enable-background:new 0 0 17.4 17.4;" xml:space="preserve">
+          <style type="text/css">
+            .st0{fill:#FFFFFF;}
+          </style>
+          <polygon class="st0" points="17.4,0.4 17,0 8.7,8.3 0.4,0 0,0.4 8.3,8.7 0,17 0.4,17.4 8.7,9 17,17.4 17.4,17 9,8.7 "/>
+          </svg>
+        </button>
+        <h2 class="modal-heading"></h2>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-content">
+          <h2>Opps</h2>
+          <p>Something happened, refresh and try again.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
