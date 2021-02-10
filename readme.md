@@ -1,4 +1,4 @@
-# Bionics - Flip and Win
+# Bionics Sciences® - Flip and Win
 A web based 3x3 tile/card flipping game. The goal is to find the Star card in 3 tries.
 
 The game was a promotional campaign for the teaser of a new coloured contact lense the company Bionics Sciences is launching. As of 7th July 2019, the lense has been launched and thus ending the game.
